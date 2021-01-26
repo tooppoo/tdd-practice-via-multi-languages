@@ -1,6 +1,6 @@
 module MoneySpec where
 
-import Prelude hiding ((*))
+import Prelude hiding ((*), (+))
 
 import Test.Hspec
 import Test.QuickCheck
@@ -50,3 +50,11 @@ spec = do
           let (Money { currency = c }) = franc 5
 
           c `shouldBe` "CHF"
+
+  describe "addition" $ do
+    describe "$5 + $5" $ do
+      it "return $10" $ do
+        let m1 = dollar 5
+            m2 = dollar 5
+
+        (m1 + m2) `shouldBe` (dollar 10)
