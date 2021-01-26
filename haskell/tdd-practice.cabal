@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 12fc93970512cd0a81e1e1165150cde694c277cd3afabb8155a928e8bf395e7e
+-- hash: 88cd7a0c6300da95874092db2128c3a9b5db376efe7e1febbc91178a7568ff39
 
 name:           tdd-practice
 version:        0.1.0.0
@@ -20,8 +20,7 @@ extra-source-files:
 
 library
   exposed-modules:
-      Chapter1.Money
-      Data.String.Strip
+      Money
   other-modules:
       Paths_tdd_practice
   hs-source-dirs:
@@ -34,8 +33,7 @@ test-suite tdd-practice-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Chapter1.MoneySpec
-      Data.String.StripSpec
+      MoneySpec
       Paths_tdd_practice
   hs-source-dirs:
       test
