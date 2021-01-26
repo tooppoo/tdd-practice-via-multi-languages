@@ -2,5 +2,5 @@ module Bank where
 
 import Money
 
-reduce :: Money -> String -> Money
+reduce :: Expression -> String -> Money
 reduce m c = dollar 10

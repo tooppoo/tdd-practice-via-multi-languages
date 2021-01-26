@@ -1,9 +1,12 @@
 module Money where
 
+data Expression =
+  Sum { augend :: Money, addend :: Money }
+
 class Times a where
   (*) :: a -> Int -> a
 class Add a where
-  (+) :: a -> a -> a
+  (+) :: a -> a -> Expression
 
 data Money =
   Money { amount :: Int, currency :: String }
@@ -12,7 +15,7 @@ data Money =
 instance Times Money where
   (Money a c) * m = Money (a Prelude.* m) c
 instance Add Money where
-  (Money a1 c1) + (Money a2 _) = Money (a1 Prelude.+ a1) c1
+  a + b = Sum a b
 
 money :: Int -> String -> Money
 money = Money

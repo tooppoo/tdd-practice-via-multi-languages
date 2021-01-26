@@ -54,6 +54,13 @@ spec = do
 
   describe "addition" $ do
     describe "$5 + $5" $ do
+      it "should return sum" $ do
+        let five = dollar 5
+            (Sum { augend = aug, addend = add }) = five + five
+
+        aug `shouldBe` five
+        add `shouldBe` five
+
       describe "reduce via Bank" $ do
         it "return $10" $ do
           let five = dollar 5
