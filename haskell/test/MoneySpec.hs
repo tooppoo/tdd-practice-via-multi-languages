@@ -11,17 +11,17 @@ spec :: Spec
 spec = do
   describe "$5 * 2" $ do
     it "return $10" $ do
-      let five = (Dollar 5)
+      let five = (dollar 5)
 
-      (five * 2) `shouldBe` (Dollar 10)
+      (five * 2) `shouldBe` (dollar 10)
   describe "5CHF * 2" $ do
     it "return 10CHF" $ do
-      let five = (Franc 5)
+      let five = (franc 5)
 
-      (five * 2) `shouldBe` (Franc 10)
+      (five * 2) `shouldBe` (franc 10)
   describe "$5 == 5CHF" $ do
     it "return false" $ do
-      let dollar = Dollar 5
-          franc = Franc 5
+      let d = dollar 5
+          f = franc 5
 
-      (dollar == franc) `shouldBe` False
+      (d == f) `shouldBe` False
