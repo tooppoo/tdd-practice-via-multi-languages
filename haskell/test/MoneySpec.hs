@@ -19,3 +19,9 @@ spec = do
       let five = (Franc 5)
 
       (five * 2) `shouldBe` (Franc 10)
+  describe "$5 == 5CHF" $ do
+    it "return false" $ do
+      let dollar = Dollar 5
+          franc = Franc 5
+
+      (dollar == franc) `shouldBe` False
