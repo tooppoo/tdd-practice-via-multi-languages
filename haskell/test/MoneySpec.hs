@@ -28,11 +28,17 @@ spec = do
   describe "currency" $ do
     describe "currency of dollar" $ do
       it "should be USD" $ do
-        let (Dollar { currency = c }) = dollar 5
+        let (Money { currency = c }) = dollar 5
 
         c `shouldBe` "USD"
     describe "currency of franc" $ do
       it "should be CHF" $ do
-        let (Franc { currency = c }) = franc 5
+        let (Money { currency = c }) = franc 5
 
         c `shouldBe` "CHF"
+  describe "different type equality" $ do
+    it "should be True" $ do
+      let f = franc 5
+          m = money 5 "CHF"
+
+      (f == m) `shouldBe` True
