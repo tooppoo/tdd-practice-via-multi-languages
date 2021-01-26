@@ -12,14 +12,14 @@ spec = do
   describe "multiplication" $ do
     describe "$5 * 2" $ do
       it "return $10" $ do
-        let five = (dollar 5)
+        let five = dollar 5
 
-        (five * 2) `shouldBe` (dollar 10)
+        (five * 2) `shouldBe` dollar 10
     describe "5CHF * 2" $ do
       it "return 10CHF" $ do
-        let five = (franc 5)
+        let five = franc 5
 
-        (five * 2) `shouldBe` (franc 10)
+        (five * 2) `shouldBe` franc 10
     describe "equality" $ do
       describe "$5 == $5" $ do
         it "return True" $ do
@@ -42,12 +42,12 @@ spec = do
     describe "currency" $ do
       describe "currency of dollar" $ do
         it "should be USD" $ do
-          let (Money { currency = c }) = dollar 5
+          let Money { currency = c } = dollar 5
 
           c `shouldBe` "USD"
       describe "currency of franc" $ do
         it "should be CHF" $ do
-          let (Money { currency = c }) = franc 5
+          let Money { currency = c } = franc 5
 
           c `shouldBe` "CHF"
 
@@ -57,4 +57,4 @@ spec = do
         let m1 = dollar 5
             m2 = dollar 5
 
-        (m1 + m2) `shouldBe` (dollar 10)
+        (m1 + m2) `shouldBe` dollar 10
