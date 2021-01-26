@@ -25,3 +25,14 @@ spec = do
           f = franc 5
 
       (d == f) `shouldBe` False
+  describe "currency" $ do
+    describe "currency of dollar" $ do
+      it "should be USD" $ do
+        let (Dollar { currency = c }) = dollar 5
+
+        c `shouldBe` "USD"
+    describe "currency of franc" $ do
+      it "should be CHF" $ do
+        let (Franc { currency = c }) = franc 5
+
+        c `shouldBe` "CHF"
