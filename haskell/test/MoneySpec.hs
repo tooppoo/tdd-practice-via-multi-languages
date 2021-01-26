@@ -19,12 +19,25 @@ spec = do
       let five = (franc 5)
 
       (five * 2) `shouldBe` (franc 10)
-  describe "$5 == 5CHF" $ do
-    it "return false" $ do
-      let d = dollar 5
-          f = franc 5
+  describe "equality" $ do
+    describe "$5 == $5" $ do
+      it "return True" $ do
+        let d1 = dollar 5
+            d2 = dollar 5
 
-      (d == f) `shouldBe` False
+        (d1 == d2) `shouldBe` True
+    describe "$5 == $6" $ do
+      it "return False" $ do
+        let d1 = dollar 5
+            d2 = dollar 6
+
+        (d1 == d2) `shouldBe` False
+    describe "$5 == 5CHF" $ do
+      it "return false" $ do
+        let d = dollar 5
+            f = franc 5
+
+        (d == f) `shouldBe` False
   describe "currency" $ do
     describe "currency of dollar" $ do
       it "should be USD" $ do
@@ -36,9 +49,3 @@ spec = do
         let (Money { currency = c }) = franc 5
 
         c `shouldBe` "CHF"
-  describe "different type equality" $ do
-    it "should be True" $ do
-      let f = franc 5
-          m = money 5 "CHF"
-
-      (f == m) `shouldBe` True
