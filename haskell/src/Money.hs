@@ -26,6 +26,14 @@ instance Times Money where
 instance Add Money where
   a + b = Sum a b
 
+class Bank a where
+  bank_reduce :: a -> String -> Money
+
+instance Bank Expression where
+  bank_reduce = Money.reduce
+instance Bank Money where
+  bank_reduce m _ = m
+
 money :: Int -> String -> Money
 money = Money
 
