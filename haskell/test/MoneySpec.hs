@@ -6,6 +6,7 @@ import Test.Hspec
 import Test.QuickCheck
 
 import Money
+import Bank
 
 spec :: Spec
 spec = do
@@ -64,7 +65,7 @@ spec = do
         it "return $10" $ do
           let five = dollar 5
               sum = five + five
-              reduced = bank_reduce sum "USD"
+              reduced = Bank.reduce sum "USD"
 
           reduced `shouldBe` dollar 10
 
@@ -73,11 +74,11 @@ spec = do
       describe "$4 + $3" $ do
         it "should be $7" $ do
           let sum = dollar 4 + dollar 3
-              reduced = bank_reduce sum "USD"
+              reduced = Bank.reduce sum "USD"
 
           reduced `shouldBe` dollar 7
 
     describe "Money" $ do
       describe "$1" $ do
         it "should be $1" $ do
-          bank_reduce (dollar 1) "USD" `shouldBe` dollar 1
+          Bank.reduce (dollar 1) "USD" `shouldBe` dollar 1

@@ -25,14 +25,8 @@ instance Times Money where
   (Money a c) * m = Money (a Prelude.* m) c
 instance Add Money where
   a + b = Sum a b
-
-class Bank a where
-  bank_reduce :: a -> String -> Money
-
-instance Bank Expression where
-  bank_reduce = Money.reduce
-instance Bank Money where
-  bank_reduce m _ = m
+instance Reducer Money where
+  reduce m _ = m
 
 money :: Int -> String -> Money
 money = Money

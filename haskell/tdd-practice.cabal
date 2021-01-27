@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 88cd7a0c6300da95874092db2128c3a9b5db376efe7e1febbc91178a7568ff39
+-- hash: e7aa1bd06a278c8851577b9dbdc0abfd65fafffb69c8978e8539c69c6f1a84e4
 
 name:           tdd-practice
 version:        0.1.0.0
@@ -20,6 +20,7 @@ extra-source-files:
 
 library
   exposed-modules:
+      Bank
       Money
   other-modules:
       Paths_tdd_practice
