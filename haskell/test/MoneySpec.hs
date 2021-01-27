@@ -69,8 +69,8 @@ spec = do
 
           reduced `shouldBe` dollar 10
 
-  describe "Sum" $ do
-    describe "reduce" $ do
+  describe "reduce" $ do
+    describe "Sum" $ do
       describe "$4 + $3" $ do
         it "should be $7" $ do
           let sum = dollar 4 + dollar 3
