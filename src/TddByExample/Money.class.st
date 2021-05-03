@@ -9,13 +9,13 @@ Class {
 }
 
 { #category : #factory }
-Money class >> dollar: anPrice [
-	^Dollar valueOf: anPrice.
+Money class >> dollar: aPrice [
+	^Money valueOf: aPrice currency: 'USD'.
 ]
 
 { #category : #factory }
-Money class >> franc: anInteger [
-	^Franc valueOf: anInteger.
+Money class >> franc: aPrice [
+	^Money valueOf: aPrice currency: 'CHF'.
 ]
 
 { #category : #constructor }
@@ -26,6 +26,11 @@ Money class >> valueOf: aPrice currency: aCurrency [
 	ins currency: aCurrency.
 	
 	^ins.
+]
+
+{ #category : #operators }
+Money >> * anInteger [
+	^Money valueOf: self price * anInteger currency: currency.
 ]
 
 { #category : #comparing }
