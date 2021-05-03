@@ -21,15 +21,18 @@ Bank >> config: aConfig [
 
 { #category : #calculations }
 Bank >> rateFrom: from to: to [
-	(from = 'CHF' and: to = 'USD')
-		ifTrue: [ ^2 ]
-		ifFalse: [ ^1 ].
+	| key |
+	key := Array with: from with: to.
+	
+	^config at: key.
 ]
 
 { #category : #configurations }
-Bank >> rateOf: aCurrency1 to: aString2 is: anInteger [ 
+Bank >> rateOf: aCurrencyFrom to: aCurrencyTo is: aRate [
+	| key |
+	key := Array with: aCurrencyFrom with: aCurrencyTo.
 	
-	
+	config at: key put: aRate.	
 ]
 
 { #category : #conversions }

@@ -22,6 +22,11 @@ MoneyTest >> testEquality [
 ]
 
 { #category : #tests }
+MoneyTest >> testIdentityRate [
+	self assert: (Bank new rateFrom: 'USD' to: 'USD') equals: 1.
+]
+
+{ #category : #tests }
 MoneyTest >> testMultiplication [
 	| five product |
 	five := 5 USD.
