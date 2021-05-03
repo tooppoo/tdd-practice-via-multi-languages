@@ -35,6 +35,17 @@ MoneyTest >> testMultiplication [
 ]
 
 { #category : #tests }
+MoneyTest >> testPlusReturnsSum [
+	| four six sum |
+	four := Money dollar: 4.
+	six := Money dollar: 6.
+	sum := four + six.
+	
+	self assert: sum augend equals: four.
+	self assert: sum addend equals: six.
+]
+
+{ #category : #tests }
 MoneyTest >> testSimpleAddition [
 	| five sum bank reduced |
 	five := Money dollar: 5.
