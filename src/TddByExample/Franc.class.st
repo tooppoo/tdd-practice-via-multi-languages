@@ -8,18 +8,23 @@ Class {
 }
 
 { #category : #constructor }
-Franc class >> valueOf: anInteger [ 
+Franc class >> valueOf: anPrice [
+	^Franc valueOf: anPrice currency: 'CHF'.
+]
+
+{ #category : #constructor }
+Franc class >> valueOf: aPrice currency: aCurrency [ 
 	| ins |
 	ins := Franc new.
-	ins price: anInteger.
-	ins currency: 'CHF'.
+	ins price: aPrice.
+	ins currency: aCurrency.
 	
 	^ins.
 ]
 
 { #category : #operators }
 Franc >> * anInteger [ 
-	^Money franc: price * anInteger.
+	^Franc valueOf: price * anInteger currency: currency.
 ]
 
 { #category : #accessors }

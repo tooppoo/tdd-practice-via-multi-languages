@@ -9,17 +9,22 @@ Class {
 
 { #category : #constructor }
 Dollar class >> valueOf: aPrice [
+	^Dollar valueOf: aPrice currency: 'USD'.
+]
+
+{ #category : #constructor }
+Dollar class >> valueOf: aPrice currency: aCurrency [ 
 	| ins |
 	ins := Dollar new.
 	ins price: aPrice.
-	ins currency: 'USD'.
+	ins currency: aCurrency.
 	
 	^ins.
 ]
 
 { #category : #operators }
 Dollar >> * anInteger [
-	^Money dollar: self price * anInteger.
+	^self class valueOf: self price * anInteger currency: currency.
 ]
 
 { #category : #accessors }
