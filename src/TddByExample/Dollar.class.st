@@ -18,7 +18,7 @@ Dollar class >> valueOf: aPrice [
 
 { #category : #operators }
 Dollar >> * anInteger [
-	self price: (self price * anInteger).
+	^ Dollar valueOf: self price * anInteger.
 ]
 
 { #category : #comparing }

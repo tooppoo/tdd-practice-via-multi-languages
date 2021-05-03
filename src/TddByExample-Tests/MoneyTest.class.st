@@ -17,13 +17,13 @@ MoneyTest >> testEquality [
 
 { #category : #tests }
 MoneyTest >> testMultiplication [
-	| five |
+	| five product |
 	five := 5 USD.
-	five * 2.
+	product := five * 2.
 	
-	self assert: five equals: 10 USD.
+	self assert: product equals: 10 USD.
 	
-	five * 3.
+	product := five * 3.
 	
-	self assert: five equals: 15 USD.
+	self assert: product equals: 15 USD.
 ]
