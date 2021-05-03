@@ -1,6 +1,8 @@
 Class {
 	#name : #Money,
 	#superclass : #Object,
+	#traits : 'Expression',
+	#classTraits : 'Expression classTrait',
 	#instVars : [
 		'price',
 		'currency'
@@ -28,11 +30,6 @@ Money class >> valueOf: aPrice currency: aCurrency [
 { #category : #operators }
 Money >> * anInteger [
 	^self class valueOf: price * anInteger currency: currency.
-]
-
-{ #category : #operators }
-Money >> + aMoney [ 
-	^Sum augend: self addend: aMoney.
 ]
 
 { #category : #comparing }
