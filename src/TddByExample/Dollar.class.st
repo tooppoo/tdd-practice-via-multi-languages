@@ -19,7 +19,7 @@ Dollar class >> valueOf: aPrice [
 
 { #category : #operators }
 Dollar >> * anInteger [
-	^ Dollar valueOf: self price * anInteger.
+	^Money dollar: self price * anInteger.
 ]
 
 { #category : #accessors }

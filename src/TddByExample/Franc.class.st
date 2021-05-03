@@ -19,7 +19,7 @@ Franc class >> valueOf: anInteger [
 
 { #category : #operators }
 Franc >> * anInteger [ 
-	^Franc valueOf: price * anInteger.
+	^Money franc: price * anInteger.
 ]
 
 { #category : #accessors }
