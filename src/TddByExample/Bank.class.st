@@ -1,8 +1,23 @@
 Class {
 	#name : #Bank,
 	#superclass : #Object,
+	#instVars : [
+		'config'
+	],
 	#category : #TddByExample
 }
+
+{ #category : #constructor }
+Bank class >> new [
+	^super new
+		config: Dictionary new;
+		yourself.
+]
+
+{ #category : #private }
+Bank >> config: aConfig [ 
+	config := aConfig.
+]
 
 { #category : #calculations }
 Bank >> rateFrom: from to: to [
