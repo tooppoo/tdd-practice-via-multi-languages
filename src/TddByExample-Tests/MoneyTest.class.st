@@ -22,4 +22,8 @@ MoneyTest >> testMultiplication [
 	five * 2.
 	
 	self assert: five equals: 10 USD.
+	
+	five * 3.
+	
+	self assert: five equals: 15 USD.
 ]
