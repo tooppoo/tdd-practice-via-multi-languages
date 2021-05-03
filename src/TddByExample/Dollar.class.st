@@ -1,9 +1,6 @@
 Class {
 	#name : #Dollar,
 	#superclass : #Money,
-	#instVars : [
-		'currency'
-	],
 	#category : #TddByExample
 }
 
@@ -25,14 +22,4 @@ Dollar class >> valueOf: aPrice currency: aCurrency [
 { #category : #operators }
 Dollar >> * anInteger [
 	^self class valueOf: self price * anInteger currency: currency.
-]
-
-{ #category : #accessors }
-Dollar >> currency [
-	^currency.
-]
-
-{ #category : #accessors }
-Dollar >> currency: aString [ 
-	currency := aString.
 ]
