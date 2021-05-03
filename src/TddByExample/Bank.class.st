@@ -21,18 +21,19 @@ Bank >> config: aConfig [
 
 { #category : #calculations }
 Bank >> rateFrom: from to: to [
-	| key |
-	key := Array with: from with: to.
-	
-	^config at: key.
+	(from = to)
+		ifTrue: [ ^1 ]
+		ifFalse: [
+			^config at: (Array with: from with: to).
+		].
+
 ]
 
 { #category : #configurations }
-Bank >> rateOf: aCurrencyFrom to: aCurrencyTo is: aRate [
-	| key |
-	key := Array with: aCurrencyFrom with: aCurrencyTo.
-	
-	config at: key put: aRate.	
+Bank >> rateOf: from to: to is: aRate [
+	config
+		at: (Array with: from with: to)
+		put: aRate.	
 ]
 
 { #category : #conversions }
