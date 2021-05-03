@@ -20,6 +20,11 @@ Sum class >> augend: augendMoney addend: addendMoney [
 ]
 
 { #category : #operators }
+Sum >> * aMultiplier [
+	^Sum augend: augend * aMultiplier addend: addend * aMultiplier.
+]
+
+{ #category : #operators }
 Sum >> + aMoney [ 
 	^Sum augend: self addend: aMoney.
 ]
