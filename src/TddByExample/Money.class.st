@@ -62,3 +62,8 @@ Money >> price [
 Money >> price: aPrice [
 	price := aPrice.
 ]
+
+{ #category : #conversions }
+Money >> reduce: aString [ 
+	^self.
+]

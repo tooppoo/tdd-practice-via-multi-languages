@@ -7,7 +7,7 @@ Class {
 { #category : #conversions }
 Bank >> reduce: source to: toCurrency [
 	^(source isKindOf: Money)
-		ifTrue: [ ^source ];
+		ifTrue: [ ^source reduce: toCurrency ];
 		ifFalse: [ ^source reduce: toCurrency ].
 
 ]
