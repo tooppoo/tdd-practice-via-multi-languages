@@ -7,6 +7,16 @@ Class {
 	#category : #TddByExample
 }
 
+{ #category : #factory }
+Money class >> dollar: anPrice [
+	^Dollar valueOf: anPrice.
+]
+
+{ #category : #factory }
+Money class >> franc: anInteger [
+	^Franc valueOf: anInteger.
+]
+
 { #category : #comparing }
 Money >> = anOther [
 	^(self price) == (anOther price).

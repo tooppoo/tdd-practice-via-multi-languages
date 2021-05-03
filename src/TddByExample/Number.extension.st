@@ -2,10 +2,10 @@ Extension { #name : #Number }
 
 { #category : #'*TddByExample' }
 Number >> CHF [
-	^ Franc valueOf: self.
+	^Money franc: self.
 ]
 
 { #category : #'*TddByExample' }
 Number >> USD [
-	^ Dollar valueOf: self.
+	^Money dollar: self.
 ]
