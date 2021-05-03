@@ -35,7 +35,7 @@ Money >> * anInteger [
 
 { #category : #comparing }
 Money >> = anOther [
-	^(self price) == (anOther price).
+	^self price == anOther price and: self currency == anOther currency.
 ]
 
 { #category : #accessors }
