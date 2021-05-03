@@ -47,13 +47,11 @@ MoneyTest >> testPlusReturnsSum [
 
 { #category : #tests }
 MoneyTest >> testReduceSum [
-	| sum bank result |
-	sum := Sum augend: (Money dollar: 3) addend: (Money dollar: 4).
+	| bank result |
 	bank := Bank new.
+	result := bank reduce: (Money dollar: 1) to: 'USD'.
 	
-	result := bank reduce: sum to: 'USD'.
-	
-	self assert: result equals: (Money dollar: 7).
+	self assert: result equals: (Money dollar: 1).
 ]
 
 { #category : #tests }
