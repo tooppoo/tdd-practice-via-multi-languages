@@ -46,6 +46,16 @@ MoneyTest >> testPlusReturnsSum [
 ]
 
 { #category : #tests }
+MoneyTest >> testReduceMoneyDifferentCurrency [
+	| bank result |
+	bank := Bank new.
+	bank rateOf: 'CHF' to: 'USD' is: 2.
+	result := bank reduce: (Money franc: 2) to: 'USD'.
+	
+	self assert: result equals: (Money dollar: 1).
+]
+
+{ #category : #tests }
 MoneyTest >> testReduceSum [
 	| bank result |
 	bank := Bank new.
