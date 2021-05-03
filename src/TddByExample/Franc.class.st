@@ -17,3 +17,8 @@ Franc class >> valueOf: anInteger [
 Franc >> * anInteger [ 
 	^Franc valueOf: price * anInteger.
 ]
+
+{ #category : #accessors }
+Franc >> currency [
+	^'CHF'.
+]

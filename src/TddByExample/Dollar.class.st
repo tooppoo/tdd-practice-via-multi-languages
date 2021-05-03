@@ -17,3 +17,8 @@ Dollar class >> valueOf: aPrice [
 Dollar >> * anInteger [
 	^ Dollar valueOf: self price * anInteger.
 ]
+
+{ #category : #accessors }
+Dollar >> currency [
+	^'USD'.
+]
