@@ -10,6 +10,12 @@ MoneyTest >> testConvertNumberToDollar [
 ]
 
 { #category : #tests }
+MoneyTest >> testCurrency [
+	self assert: 5 USD currency equals: 'USC'.
+	self assert: 5 CHF currency equals: 'CHF'.
+]
+
+{ #category : #tests }
 MoneyTest >> testEquality [
 	self assert: 5 USD = 5 USD.
 	self assert: 5 USD ~= 6 USD.
