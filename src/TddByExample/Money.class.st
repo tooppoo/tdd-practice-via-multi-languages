@@ -66,9 +66,7 @@ Money >> price: aPrice [
 { #category : #conversions }
 Money >> reduce: aBank to: to [
 	| rate |
-	rate := ((currency = 'CHF') and: (to = 'USD'))
-		ifTrue: [ 2 ]
-		ifFalse: [ 1 ].
+	rate := aBank rateFrom: currency to: to.
 		
 	^Money valueOf: price / rate currency: to.
 ]
