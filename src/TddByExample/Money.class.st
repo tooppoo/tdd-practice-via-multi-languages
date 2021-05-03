@@ -19,18 +19,15 @@ Money class >> franc: aPrice [
 ]
 
 { #category : #constructor }
-Money class >> valueOf: aPrice currency: aCurrency [ 
-	| ins |
-	ins := self new.
-	ins price: aPrice.
-	ins currency: aCurrency.
-	
-	^ins.
+Money class >> valueOf: aPrice currency: aCurrency [
+	^self new price: aPrice;
+		currency: aCurrency;
+		yourself.
 ]
 
 { #category : #operators }
 Money >> * anInteger [
-	^Money valueOf: self price * anInteger currency: currency.
+	^self class valueOf: price * anInteger currency: currency.
 ]
 
 { #category : #operators }
@@ -63,10 +60,10 @@ Money >> price: aPrice [
 	price := aPrice.
 ]
 
-{ #category : #conversions }
+{ #category : #converting }
 Money >> reduce: aBank to: to [
 	| rate |
 	rate := aBank rateFrom: currency to: to.
 		
-	^Money valueOf: price / rate currency: to.
+	^self class valueOf: price / rate currency: to.
 ]

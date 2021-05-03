@@ -10,23 +10,19 @@ Class {
 
 { #category : #constructor }
 Sum class >> augend: augendMoney addend: addendMoney [
-	| ins |
-	ins := Sum new.
-	
-	ins augend: augendMoney;
-		addend: addendMoney.
-
-	^ins.
+	^self new augend: augendMoney;
+		addend: addendMoney;
+		yourself.
 ]
 
 { #category : #operators }
 Sum >> * aMultiplier [
-	^Sum augend: augend * aMultiplier addend: addend * aMultiplier.
+	^self class augend: augend * aMultiplier addend: addend * aMultiplier.
 ]
 
 { #category : #operators }
 Sum >> + aMoney [ 
-	^Sum augend: self addend: aMoney.
+	^self class augend: self addend: aMoney.
 ]
 
 { #category : #accessors }

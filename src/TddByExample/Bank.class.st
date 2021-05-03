@@ -36,7 +36,7 @@ Bank >> rateOf: from to: to is: aRate [
 		put: aRate.	
 ]
 
-{ #category : #conversions }
+{ #category : #converting }
 Bank >> reduce: source to: toCurrency [
 	^source reduce: self to: toCurrency.
 
