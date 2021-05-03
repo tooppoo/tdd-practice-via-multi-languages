@@ -17,18 +17,3 @@ Franc class >> valueOf: anInteger [
 Franc >> * anInteger [ 
 	^Franc valueOf: price * anInteger.
 ]
-
-{ #category : #comparing }
-Franc >> = anOther [
-	^price == anOther price.
-]
-
-{ #category : #private }
-Franc >> price [
-	^ price
-]
-
-{ #category : #private }
-Franc >> price: anInteger [ 
-	price := anInteger.
-]

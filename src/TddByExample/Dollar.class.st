@@ -17,18 +17,3 @@ Dollar class >> valueOf: aPrice [
 Dollar >> * anInteger [
 	^ Dollar valueOf: self price * anInteger.
 ]
-
-{ #category : #comparing }
-Dollar >> = anOther [
-	^(self price) == (anOther price).
-]
-
-{ #category : #private }
-Dollar >> price [
-	^ price
-]
-
-{ #category : #private }
-Dollar >> price: aPrice [
-	price := aPrice.
-]
