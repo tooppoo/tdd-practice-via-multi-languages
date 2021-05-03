@@ -5,6 +5,9 @@ Class {
 }
 
 { #category : #conversions }
-Bank >> reduce: aMoney currency: aString [ 
-	^Money dollar: 10.
+Bank >> reduce: source to: toCurrency [ 
+	| sum |
+	sum := source augend price + source addend price.
+	
+	^Money valueOf: sum currency: toCurrency.
 ]

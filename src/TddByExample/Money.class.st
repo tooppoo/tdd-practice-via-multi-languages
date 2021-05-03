@@ -40,7 +40,7 @@ Money >> + aMoney [
 
 { #category : #comparing }
 Money >> = anOther [
-	^self price == anOther price and: self currency == anOther currency.
+	^price = anOther price and: currency = anOther currency.
 ]
 
 { #category : #accessors }
