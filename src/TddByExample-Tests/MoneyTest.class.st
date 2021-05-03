@@ -16,6 +16,8 @@ MoneyTest >> testEquality [
 	
 	self assert: 5 CHF = 5 CHF.
 	self assert: 5 CHF ~= 6 CHF.
+	
+	self assert: 5 USD = 5 CHF.
 ]
 
 { #category : #tests }
