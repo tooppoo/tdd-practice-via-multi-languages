@@ -16,6 +16,19 @@ MoneyTest >> testEquality [
 ]
 
 { #category : #tests }
+MoneyTest >> testFrancMultiplication [
+	| five product |
+	five := 5 CHF.
+	product := five * 2.
+	
+	self assert: product equals: 10 CHF.
+	
+	product := five * 3.
+	
+	self assert: product equals: 15 CHF.
+]
+
+{ #category : #tests }
 MoneyTest >> testMultiplication [
 	| five product |
 	five := 5 USD.
