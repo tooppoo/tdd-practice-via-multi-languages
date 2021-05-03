@@ -1,6 +1,6 @@
 Class {
 	#name : #Franc,
-	#superclass : #Object,
+	#superclass : #Money,
 	#instVars : [
 		'price'
 	],
