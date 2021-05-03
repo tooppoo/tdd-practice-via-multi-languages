@@ -16,6 +16,11 @@ Dollar class >> valueOf: aPrice [
 	^ins.
 ]
 
+{ #category : #operators }
+Dollar >> * anInteger [
+	self price: (self price * anInteger).
+]
+
 { #category : #comparing }
 Dollar >> = anOther [
 	^(self price) == (anOther price).
