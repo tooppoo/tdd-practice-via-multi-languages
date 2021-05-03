@@ -4,7 +4,7 @@ Class {
 	#category : #TddByExample
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #constructor }
 Dollar class >> valueOf: aPrice [
 	| ins |
 	ins := Dollar new.
