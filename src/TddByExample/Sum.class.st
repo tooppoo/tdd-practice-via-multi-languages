@@ -1,6 +1,8 @@
 Class {
 	#name : #Sum,
 	#superclass : #Object,
+	#traits : 'Expression',
+	#classTraits : 'Expression classTrait',
 	#instVars : [
 		'augend',
 		'addend'
@@ -18,11 +20,6 @@ Sum class >> augend: augendMoney addend: addendMoney [
 { #category : #operators }
 Sum >> * aMultiplier [
 	^self class augend: augend * aMultiplier addend: addend * aMultiplier.
-]
-
-{ #category : #operators }
-Sum >> + aMoney [ 
-	^self class augend: self addend: aMoney.
 ]
 
 { #category : #accessors }
