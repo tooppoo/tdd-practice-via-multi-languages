@@ -38,3 +38,11 @@ Sum >> augend [
 Sum >> augend: aMoney [ 
 	augend := aMoney.
 ]
+
+{ #category : #conversions }
+Sum >> reduce: toCurrency [
+	| amount |
+	amount := augend price + addend price.
+	
+	^Money valueOf: amount currency: toCurrency.
+]
