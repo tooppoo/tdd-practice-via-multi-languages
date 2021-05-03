@@ -1,6 +1,9 @@
 Class {
 	#name : #Dollar,
 	#superclass : #Money,
+	#instVars : [
+		'currency'
+	],
 	#category : #TddByExample
 }
 
@@ -9,6 +12,7 @@ Dollar class >> valueOf: aPrice [
 	| ins |
 	ins := Dollar new.
 	ins price: aPrice.
+	ins currency: 'USD'.
 	
 	^ins.
 ]
@@ -20,5 +24,10 @@ Dollar >> * anInteger [
 
 { #category : #accessors }
 Dollar >> currency [
-	^'USD'.
+	^currency.
+]
+
+{ #category : #accessors }
+Dollar >> currency: aString [ 
+	currency := aString.
 ]

@@ -1,6 +1,9 @@
 Class {
 	#name : #Franc,
 	#superclass : #Money,
+	#instVars : [
+		'currency'
+	],
 	#category : #TddByExample
 }
 
@@ -9,6 +12,7 @@ Franc class >> valueOf: anInteger [
 	| ins |
 	ins := Franc new.
 	ins price: anInteger.
+	ins currency: 'CHF'.
 	
 	^ins.
 ]
@@ -20,5 +24,10 @@ Franc >> * anInteger [
 
 { #category : #accessors }
 Franc >> currency [
-	^'CHF'.
+	^currency.
+]
+
+{ #category : #accessors }
+Franc >> currency: aString [ 
+	currency := aString.
 ]
