@@ -35,9 +35,7 @@ Money >> * anInteger [
 
 { #category : #operators }
 Money >> + aMoney [ 
-	^self class
-		valueOf: self price + aMoney price
-		currency: aMoney currency.
+	^Sum augend: self addend: aMoney.
 ]
 
 { #category : #comparing }
