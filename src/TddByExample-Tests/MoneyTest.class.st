@@ -33,3 +33,11 @@ MoneyTest >> testMultiplication [
 	
 	self assert: product equals: 15 USD.
 ]
+
+{ #category : #tests }
+MoneyTest >> testSimpleAddition [
+	| sum |
+	sum := (Money dollar: 5) + (Money dollar: 5).
+	
+	self assert: sum equals: (Money dollar: 10).
+]
