@@ -12,6 +12,6 @@ Bank >> rateOf: aCurrency1 to: aString2 is: anInteger [
 
 { #category : #conversions }
 Bank >> reduce: source to: toCurrency [
-	^source reduce: toCurrency.
+	^source reduce: self to: toCurrency.
 
 ]

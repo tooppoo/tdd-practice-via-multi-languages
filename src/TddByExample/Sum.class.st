@@ -46,3 +46,11 @@ Sum >> reduce: toCurrency [
 	
 	^Money valueOf: amount currency: toCurrency.
 ]
+
+{ #category : #conversions }
+Sum >> reduce: aBank to: currency [
+	| amount |
+	amount := augend price + addend price.
+	
+	^Money valueOf: amount currency: currency.
+]
