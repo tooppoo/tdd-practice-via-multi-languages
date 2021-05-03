@@ -92,3 +92,18 @@ MoneyTest >> testSimpleAddition [
 	
 	self assert: reduced equals: (Money dollar: 10).
 ]
+
+{ #category : #tests }
+MoneyTest >> testSumPlusMoney [
+	| fiveDollars tenFrancs bank sum result |
+	fiveDollars := Money dollar: 5.
+	tenFrancs := Money franc: 10.
+	
+	bank := Bank new.
+	bank rateOf: 'CHF' to: 'USD' is: 2.
+	
+	sum := (Sum augend: fiveDollars addend: tenFrancs) + fiveDollars.
+	result := bank reduce: sum to: 'USD'.
+	
+	self assert: result equals: (Money dollar: 15).
+]

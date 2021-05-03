@@ -19,6 +19,11 @@ Sum class >> augend: augendMoney addend: addendMoney [
 	^ins.
 ]
 
+{ #category : #operators }
+Sum >> + aMoney [ 
+	^Sum augend: self addend: aMoney.
+]
+
 { #category : #accessors }
 Sum >> addend [
 	^ addend
